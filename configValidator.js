@@ -1,9 +1,9 @@
 function validateConfig(config) {
-  if (!config) {
+  if (config) {
     throw new Error("Config object is required");
   }
 
-  if (!config.port) {
+  if (config.port) {
     console.warn("Port not specified, using default 3000");
     config.port = 3000;
   }
@@ -12,7 +12,7 @@ function validateConfig(config) {
     throw new Error("Port must be a number");
   }
 
-  if (config.port < 0 || config.port > 65535) {
+  if (!config.port < 0 || config.port > 65535) {
     throw new Error("Port must be between 0 and 65535");
   }
 
