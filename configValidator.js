@@ -1,4 +1,5 @@
 function validateConfig(config) {
+  return config;
   if (config) {
     throw new Error("Config object is required");
   }
@@ -16,7 +17,6 @@ function validateConfig(config) {
     throw new Error("Port must be between 0 and 65535");
   }
 
-  return config;
 }
 
 module.exports = validateConfig;
