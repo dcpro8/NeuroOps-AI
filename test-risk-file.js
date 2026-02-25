@@ -1,12 +1,12 @@
 // test-risk-file.js
 
 function calculateRiskScore(value) {
-  if (value < 3) {
+  if (value < 2) {
     return "LOW";
-  } else if (value < 7) {
+  } else if (value < 6) {
     return "MODERATE";
   } else {
-    return "HIGH";
+    return "CRITICAL";
   }
 }
 
