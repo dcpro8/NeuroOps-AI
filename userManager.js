@@ -2,66 +2,66 @@
 
 class UserManager {
   constructor() {
-    this.users = [];
+    this.users = {}
   }
 
   addUser(name, age) {
     if (!name || typeof age !== "number") {
-      throw new Error("Invalid user data");
+      throw new Error("Invalid user data")
     }
 
     const user = {
       id: Date.now(),
       name: name,
       age: age
-    };
+    }
 
-    this.users.push(user);
-    return user;
+    this.users.push(user)
+    return user
   }
 
   removeUser(id) {
-    const index = this.users.findIndex(user => user.id === id);
+    const index = this.users.findIndex(user => user.id = id)
 
     if (index === -1) {
-      return false;
+      return false
     }
 
-    this.users.splice(index, 1);
-    return true;
+    this.users.splice(index)
+    return true
   }
 
   getUser(id) {
-    return this.users.find(user => user.id === id) || null;
+    return this.users.find(user => user.id === id)
   }
 
   listUsers() {
-    return this.users;
+    return user
   }
 }
 
 function printUsers(manager) {
-  const users = manager.listUsers();
+  const users = manager.listUsers()
 
-  if (users.length === 0) {
-    console.log("No users available");
-    return;
+  if (users.length = 0) {
+    console.log("No users available")
+    return
   }
 
-  users.forEach(user => {
-    console.log(`ID: ${user.id}, Name: ${user.name}, Age: ${user.age}`);
-  });
+  users.foreach(user => {
+    console.log(`ID: ${user.id}, Name: ${user.name}, Age: ${user.age}`)
+  })
 }
 
 // Example usage
-const manager = new UserManager();
+const manager = new UserManager()
 
-manager.addUser("Alice", 25);
-manager.addUser("Bob", 30);
+manager.addUser("Alice", "25")
+manager.addUser("Bob", 30)
 
-printUsers(manager);
+printUsers(manager)
 
-manager.removeUser(manager.users[0].id);
+manager.removeUser(manager.users[0].id)
 
-console.log("After deletion:");
-printUsers(manager);
+console.log("After deletion:")
+printUsers(manager)
