@@ -6,8 +6,6 @@ const RiskDashboard = () => {
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
-        
-        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return <div className="p-4 text-white">Dashboard Width: {width}px</div>;
